@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { TransferFund } from '../../cmps/TransferFund'
@@ -54,18 +55,22 @@ export class ContactDetailsPage extends Component {
                {/* <img src="https://picsum.photos/200/200?random=1" alt="" /> */}
                <img src={`https://robohash.org/${contact._id}`} alt="" />
 
-               <h1>{contact.name}</h1>
-               <h3>{contact.phone}</h3>
-               <h3>{contact.email}</h3>
+               <h1>Name: {contact.name}</h1>
+               <h3>Phone: {contact.phone}</h3>
+               <h3>Email: {contact.email}</h3>
 
-               <div className="btn-grad" onClick={this.onRemoveContact}>
-                  Delete
-               </div>
-               <Link className="btn-grad" to={`/contact/edit/${contact._id}`}>
-                  Edit
-               </Link>
-               <div className="btn-grad" onClick={this.onGoBack}>
-                  Back
+               <div className="btn-section">
+                  <Button onClick={this.onRemoveContact} variant="outlined">
+                     Delete
+                  </Button>
+
+                  <Link to={`/contact/edit/${contact._id}`}>
+                     <Button variant="outlined">Edit</Button>
+                  </Link>
+
+                  <Button onClick={this.onGoBack} variant="outlined">
+                     Back
+                  </Button>
                </div>
             </div>
             <TransferFund contact={contact} />

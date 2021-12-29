@@ -1,3 +1,4 @@
+import { Button, TextField } from '@mui/material'
 import { Component, createRef } from 'react'
 import { Link } from 'react-router-dom'
 import { contactService } from '../../services/contactService'
@@ -34,20 +35,28 @@ export class ContactEditPage extends Component {
          <div className="contact-edit">
             {contact._id ? <h1>Edit current contact</h1> : <h1>Add contact</h1>}
 
-            <form onSubmit={this.onSaveContact}>
-               <label htmlFor="name">Name</label>
-               <input ref={this.inputRef} onChange={this.handleChange} value={contact.name} type="text" name="name" id="name" />
-
-               <label htmlFor="phone">Phone</label>
-               <input onChange={this.handleChange} value={contact.phone} type="phone" name="phone" id="phone" />
-
-               <label htmlFor="email">Email</label>
-               <input onChange={this.handleChange} value={contact.email} type="email" name="email" id="email" />
-
-               <button className="btn-grad">Save</button>
+            <form>
+               <div>
+                  {/* <label htmlFor="name">Name</label> */}
+                  {/* <input ref={this.inputRef} onChange={this.handleChange} value={contact.name} type="text" name="name" id="name" /> */}
+                  <TextField ref={this.inputRef} onChange={this.handleChange} value={contact.name} type="text" name="name" id="name" label="Enter your name" variant="outlined" />
+               </div>
+               <div>
+                  {/* <label htmlFor="phone">Phone</label> */}
+                  {/* <input onChange={this.handleChange} value={contact.phone} type="phone" name="phone" id="phone" /> */}
+                  <TextField onChange={this.handleChange} value={contact.phone} type="phone" name="phone" id="phone" label="Enter your phone" variant="outlined" />
+               </div>
+               <div>
+                  {/* <label htmlFor="email">Email</label> */}
+                  {/* <input onChange={this.handleChange} value={contact.email} type="email" name="email" id="email" /> */}
+                  <TextField onChange={this.handleChange} value={contact.email} type="email" name="email" id="email" label="Enter your email" variant="outlined" />
+               </div>
+               <Button onClick={this.onSaveContact} variant="outlined">
+                  Save
+               </Button>
             </form>
-            <Link className="btn-grad" to={`/contact`}>
-               Back
+            <Link className="btn" to={`/contact`}>
+               <Button variant="outlined">Back</Button>
             </Link>
          </div>
       )

@@ -1,3 +1,4 @@
+import { Button, TextField } from '@mui/material'
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
@@ -36,7 +37,7 @@ class _TransferFund extends Component {
       this.onSpendBalance(this.state.amount, this.props.loggedInUser)
       var move = {
          to: this.props.contact.name,
-         at: new Date() + '',
+         at: new Date().toLocaleString('en') + '',
          amount: this.state.amount
       }
       userService.addMove({ ...move })
@@ -60,13 +61,15 @@ class _TransferFund extends Component {
       if (!loggedInUser) return <div>Loading...</div>
       return (
          <div className="transfer-fund">
-            <h1>TransferFund</h1>
-            <h2>Transfer coins to {contact.name}</h2>
-            <h2>from {loggedInUser.name}</h2>
-            <form onSubmit={this.onSaveAmount}>
+            <h2>Transfer coins to: {contact.name}</h2>
+            {/* <h2>from {loggedInUser.name}</h2> */}
+            <form>
                <label htmlFor="amount">Amount:</label>
-               <input onChange={this.handleChange} value={amount} type="number" name="amount" />
-               <button>save</button>
+               {/* <input onChange={this.handleChange} value={amount} type="number" name="amount" /> */}
+               <TextField onChange={this.handleChange} value={amount} type="number" label="Enter amount" variant="outlined" />
+               <Button onClick={this.onSaveAmount} variant="outlined">
+                  Save
+               </Button>
             </form>
             <MovesList moves={moves} />
          </div>

@@ -10,7 +10,7 @@ import { userService } from '../../services/userService'
 import { connect } from 'react-redux'
 import { loadContacts, removeContact, setFilterBy } from '../../store/actions/contactActions'
 import { spendBalance, loadUser } from '../../store/actions/userActions'
-// import Button from '@mui/material/Button'
+import Button from '@mui/material/Button'
 
 // import Box from '@mui/material/Box'
 // import InputLabel from '@mui/material/InputLabel'
@@ -67,8 +67,8 @@ class _ContactPage extends Component {
       return (
          <div className="contact-page">
             <ContactFilter changeFilter={this.changeFilter} />
-            <Link className="btn-grad" to="/contact/edit">
-               Add Contact
+            <Link className="btn" to="/contact/edit">
+               <Button variant="outlined"> Add Contact</Button>
             </Link>
 
             {/* <Button variant="contained">Hello World</Button> */}

@@ -26,7 +26,9 @@ export class SignupPage extends Component {
       ev.preventDefault()
       userService.signup(this.state.user.name)
       console.log(this.props)
-      this.props.history.push('/')
+      console.log('this.state.user.name :>>', this.state.user.name)
+      // this.props.history.push('/')
+      console.log('this.loadUser() :>>', this.loadUser())
    }
 
    render() {
@@ -36,10 +38,10 @@ export class SignupPage extends Component {
          <div className="signup-page">
             <h1>Signup here!</h1>
             <form>
-               <img src="./img/bitcoin.png" alt="" />
+               <img src="./img/bitcoin2.png" alt="" />
                <label htmlFor="name">Enter your name</label>
                <TextField id="outlined-name" label="Name" value={user.name} onChange={this.handleChange} type="text" name="name" />
-               <Button onClick={this.onSaveUser} variant="contained">
+               <Button onClick={this.onSaveUser} variant="outlined">
                   Sign up
                </Button>
             </form>

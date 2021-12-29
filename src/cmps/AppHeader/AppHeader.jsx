@@ -4,6 +4,7 @@ import { eventBusService } from '../../services/eventBusService'
 import { userService } from '../../services/userService'
 import { connect } from 'react-redux'
 import { spendBalance, loadUser } from '../../store/actions/userActions'
+import Button from '@mui/material/Button'
 
 class _AppHeader extends Component {
    state = { message: '', isShown: false }
@@ -42,16 +43,16 @@ class _AppHeader extends Component {
                )}
                <nav className="pages-routing-links">
                   <NavLink activeClassName="my-active" exact to="/">
-                     Home
+                     <Button variant="outlined">Home</Button>
                   </NavLink>
                   <NavLink activeClassName="my-active" to="/contact">
-                     Contacts
+                     <Button variant="outlined">Contacts</Button>
                   </NavLink>
                   <NavLink activeClassName="my-active" to="/statistic">
-                     Statistics
+                     <Button variant="outlined">Statistics</Button>
                   </NavLink>
                   <NavLink activeClassName="my-active" to="/signup">
-                     Signup
+                     <Button variant="outlined">Signup</Button>
                   </NavLink>
                </nav>
             </section>

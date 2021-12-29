@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material'
 import React, { Component } from 'react'
 
 export class ContactFilter extends Component {
@@ -34,7 +35,7 @@ export class ContactFilter extends Component {
             </section> */}
             <section className="input-container">
                <label htmlFor="term">Name / Phone / Email</label>
-               <input onChange={this.handleChange} value={term} type="text" name="term" id="term" />
+               <TextField onChange={this.handleChange} value={term} type="text" name="term" id="term" label="Enter filter" variant="outlined" />
             </section>
          </form>
       )

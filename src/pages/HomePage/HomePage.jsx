@@ -32,7 +32,7 @@ export class HomePage extends Component {
       return (
          <div className="homepage-app">
             <img src={`./img/profile.png`} alt="" />
-            <h1>Hello {user.name}!</h1>
+            <h1>Welcome {user.name}!</h1>
             <h2>Coins: {user.coins}</h2>
             <h2>BTC: {btc}</h2>
             <MovesList moves={moves} />
