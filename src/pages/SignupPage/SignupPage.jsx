@@ -25,10 +25,7 @@ export class SignupPage extends Component {
    onSaveUser = async ev => {
       ev.preventDefault()
       userService.signup(this.state.user.name)
-      // console.log(this.props)
-      // console.log('this.state.user.name :>>', this.state.user.name)
       this.props.history.push('/')
-      // console.log('this.loadUser() :>>', this.loadUser())
    }
 
    render() {
