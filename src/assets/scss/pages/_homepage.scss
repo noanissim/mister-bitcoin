@@ -1,0 +1,13 @@
+.homepage-app {
+   background-color: white;
+   min-height: 90vh;
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+         width: 200px;
+         height: 200px;
+      }
+   }
+}
