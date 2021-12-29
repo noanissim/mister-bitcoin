@@ -20,3 +20,14 @@ export function loadUser() {
       }
    }
 }
+
+export function setUser(name) {
+   return async (dispatch, getState) => {
+      try {
+         const user = await userService.signup(name)
+         dispatch({ type: 'SET_USER', user })
+      } catch (err) {
+         console.log(err)
+      }
+   }
+}

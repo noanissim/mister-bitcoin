@@ -37,7 +37,7 @@ export class SignupPage extends Component {
             <form>
                <img src="./img/bitcoin2.png" alt="" />
                <label htmlFor="name">Enter your name</label>
-               <TextField id="outlined-name" label="Name" value={user.name} onChange={this.handleChange} type="text" name="name" />
+               <TextField autoComplete="off" id="outlined-name" label="Name" value={user.name} onChange={this.handleChange} type="text" name="name" />
                <Button onClick={this.onSaveUser} variant="outlined">
                   Sign up
                </Button>

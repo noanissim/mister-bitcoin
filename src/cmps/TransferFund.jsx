@@ -66,7 +66,7 @@ class _TransferFund extends Component {
             <form>
                <label htmlFor="amount">Amount:</label>
                {/* <input onChange={this.handleChange} value={amount} type="number" name="amount" /> */}
-               <TextField onChange={this.handleChange} value={amount} type="number" label="Enter amount" variant="outlined" />
+               <TextField autoComplete="off" onChange={this.handleChange} value={amount} type="number" label="Enter amount" variant="outlined" />
                <Button onClick={this.onSaveAmount} variant="outlined">
                   Save
                </Button>

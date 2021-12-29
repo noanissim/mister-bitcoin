@@ -39,17 +39,17 @@ export class ContactEditPage extends Component {
                <div>
                   {/* <label htmlFor="name">Name</label> */}
                   {/* <input ref={this.inputRef} onChange={this.handleChange} value={contact.name} type="text" name="name" id="name" /> */}
-                  <TextField ref={this.inputRef} onChange={this.handleChange} value={contact.name} type="text" name="name" id="name" label="Enter your name" variant="outlined" />
+                  <TextField autoComplete="off" ref={this.inputRef} onChange={this.handleChange} value={contact.name} type="text" name="name" id="name" label="Enter your name" variant="outlined" />
                </div>
                <div>
                   {/* <label htmlFor="phone">Phone</label> */}
                   {/* <input onChange={this.handleChange} value={contact.phone} type="phone" name="phone" id="phone" /> */}
-                  <TextField onChange={this.handleChange} value={contact.phone} type="phone" name="phone" id="phone" label="Enter your phone" variant="outlined" />
+                  <TextField autoComplete="off" onChange={this.handleChange} value={contact.phone} type="phone" name="phone" id="phone" label="Enter your phone" variant="outlined" />
                </div>
                <div>
                   {/* <label htmlFor="email">Email</label> */}
                   {/* <input onChange={this.handleChange} value={contact.email} type="email" name="email" id="email" /> */}
-                  <TextField onChange={this.handleChange} value={contact.email} type="email" name="email" id="email" label="Enter your email" variant="outlined" />
+                  <TextField autoComplete="off" onChange={this.handleChange} value={contact.email} type="email" name="email" id="email" label="Enter your email" variant="outlined" />
                </div>
                <Button onClick={this.onSaveContact} variant="outlined">
                   Save
